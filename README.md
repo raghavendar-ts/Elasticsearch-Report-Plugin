@@ -13,6 +13,8 @@ There are a lot of companies(small scale to large scale companies) who use Elast
 6. Character at index - Get the character at given index of Elasticsarch field value
 7. Calculate - Perform arithmetic operation on Elasticsarch field values
 8. Range - Get custom value based on range condition of Elasticsarch field value
-9. Array indexOf(int value) - Get index of given value from an Elasticsarch array
-10.Array indexOf(String value) - Get index of given value from an Elasticsearch 
-			 10 Array valueAt(index)
+9. Array indexOf(int value) - Get index of given integer value from an Elasticsarch array
+10.Array indexOf(String value) - Get index of given string value from an Elasticsearch array
+11.Array valueAt(index) - Get the value of given index from an Elasticsarch array
+
+

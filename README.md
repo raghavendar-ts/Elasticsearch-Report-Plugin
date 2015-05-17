@@ -1,23 +1,18 @@
-# Elasticsearch-Report-Plugin
+# Elasticsearch Report Plugin
 ##Elasticsearch Report Plugin to Generate Excel Report
 
 There are a lot of companies(small scale to large scale companies) who use Elasticsearch to store massive amount of to data.Most of them find it hard to generate simple reports from Elasticsearch to get information out of it.  So this Elasticsearch plugin can be used to generate reports(Excel) with simple JSON input. This plugin can save the report to the server and also can send E-Mail to the configured recipients. We can also perform some basic operations on the fields to get a computed field in the Excel report.
 
-####List of Operation:
+####List of Operation: 
 
-1. getValue -  Print the Elasticsearch field as a column in Excel 
-  
-2. getDValue
-
-sdf
-  
-getDValue
-2 Length
-			3 Format Number Length
-			 4 Sub String
-			 5 Character at index
-			 6 Calculate
-			 7 Range
-			 8 Array indexOf(int value)
-			 9 Array indexOf(String value)
+1. getValue -  Get the Elasticsearch field value
+2. getDValue - Get custom value based on the Elasticsarch field value
+3. Length - Get the length of Elasticsarch field value
+4. Format Number Length - Format integer to given length
+5. Sub String - Get substring of Elasticsarch field value
+6. Character at index - Get the character at given index of Elasticsarch field value
+7. Calculate - Perform arithmetic operation on Elasticsarch field values
+8. Range - Get custom value based on range condition of Elasticsarch field value
+9. Array indexOf(int value) - Get index of given value from an Elasticsarch array
+10.Array indexOf(String value) - Get index of given value from an Elasticsearch 
 			 10 Array valueAt(index)

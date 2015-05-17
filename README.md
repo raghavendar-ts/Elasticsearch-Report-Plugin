@@ -14,8 +14,9 @@ There are a lot of companies(small scale to large scale companies) who use Elast
 7. Calculate - Perform arithmetic operation on Elasticsarch field values
 8. Range - Get custom value based on range condition of Elasticsarch field value
 9. Array indexOf(int value) - Get index of given integer value from an Elasticsarch array
-10. Array indexOf(String value) - Get index of given string value from an Elasticsearch array 
+10.Array indexOf(String value) - Get index of given string value from an Elasticsearch array 
 11.Array valueAt(index) - Get the value of given index from an Elasticsarch array
+
 
 
 

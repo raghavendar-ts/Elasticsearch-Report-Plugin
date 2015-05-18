@@ -24,14 +24,14 @@ There are a lot of companies(small scale to large scale companies) who use Elast
 |1|getValue|[0,ES_FIELD_NAME]|
 |2|getDValue |[1,valueMappingKey,ES_FIELD_NAME]|
 |3|Length |[2,ES_FIELD_NAME]|
-|4|Format Number Length|[3,ES_FIELD_NAME,(int)]<br/>[3,ES_FIELD_NAME,ES_FIELD_NAME]|
-|5|Sub String|[4,]|
-|6|Character at index |[5,]|
-|7|Calculate |[6,]|
-|8|Range |[7,]|
-|9|Array indexOf(int value) |[8,]|
-|10|Array indexOf(String value)|[9,]|
-|11|Array valueAt(index) |[10,]|
+|4|Format Number Length|[3,ES_FIELD_NAME,(int) length]|
+|5|Sub String|[4,ES_FIELD_NAME,(int) from,(int) to]|
+|6|Character at index |[5,ES_FIELD_NAME,(int) index]|
+|7|Calculate |[6,(string) ARITHMETIC_EXPRESSION]|
+|8|Range |[7,valueMappingKey,(int)]|
+|9|Array indexOf(int value) |[8,ES_FIELD_NAME,(int) value]|
+|10|Array indexOf(String value)|[9,ES_FIELD_NAME,(string) value]|
+|11|Array valueAt(index) |[10,ES_FIELD_NAME,(int)index]|
 
 
 

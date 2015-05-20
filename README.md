@@ -34,7 +34,7 @@ There are a lot of companies(small scale to large scale companies) who use Elast
 |10|Array indexOf(String value)|[9,ES_ARRAY_FIELD,value]|[9,String,String]|
 |11|Array valueAt(index) |[10,VALUE,index]|[10,String,int]|
 
-#### Note :
+#### Syntax Description :
 |Operation | Description|
 |---|-----------|
 |ES_FIELD| Field of a Elasticsearch document|
@@ -42,5 +42,33 @@ There are a lot of companies(small scale to large scale companies) who use Elast
 |valueMappingKey| Field of a input JSON given by user |
 |ARITHMETIC_EXPRESSION| Any string representing conditional or arithmetic expression |
 |VALUE| Can be either string given by user or any other OPERATION. i.e. we can nest the above operations to whatever level we want. In other words, we can perform multi-level OPERATION on the Elasticsearch fields |
+
+
+Detailed Example with Sample Data :
+
+Consider we have following data in Elasticsearch.
+
+<pre>
+{
+   "name":"Ramu"
+}
+</pre>
+
+
+####Operation and Example :
+| # | Operation | Example |
+|---|-----------|---------|
+|1|getValue|[0,ES_FIELD]|
+|2|getDValue |[1,valueMappingKey,VALUE]
+|3|Length |[2,VALUE]|
+|4|Format Number Length|[3,VALUE,FORMAT_LENGTH]|
+|5|Sub String|[4,VALUE,from,to]|
+|6|Character at index |[5,VALUE,index]|
+|7|Calculate |[6, ARITHMETIC_EXPRESSION]|
+|8|Range |[7,valueMappingKey,VALUE]|
+|9|Array indexOf(int value) |[8,ES_ARRAY_FIELD, value]|
+|10|Array indexOf(String value)|[9,ES_ARRAY_FIELD,value]|
+|11|Array valueAt(index) |[10,VALUE,index]|
+
 
 

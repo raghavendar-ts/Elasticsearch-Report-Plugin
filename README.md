@@ -28,8 +28,8 @@ There are a lot of companies(small scale to large scale companies) who use Elast
 |5|Sub String|[4,VALUE,from,to]|[4,String,int,int]|
 |6|Character at index |[5,VALUE,index]|[5,String,int]|
 |7|Calculate |[6, ARITHMETIC_EXPRESSION]|[6,String]|
-|8|Range |[7,valueMappingKey,]|[7,String]|
-|9|Array indexOf(int value) |[8,ES_ARRAY_FIELD_NAME, value]|[8,String,String]|
+|8|Range |[7,valueMappingKey,VALUE]|[7,String,String]|
+|9|Array indexOf(int value) |[8,ES_ARRAY_FIELD_NAME, value]|[8,String,int]|
 |10|Array indexOf(String value)|[9,ES_ARRAY_FIELD_NAME,value]|[9,String,String]|
 |11|Array valueAt(index) |[10,VALUE,index]|[10,String,int]|
 

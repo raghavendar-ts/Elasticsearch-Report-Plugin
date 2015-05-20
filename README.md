@@ -3,7 +3,7 @@
 
 There are a lot of companies(small scale to large scale companies) who use Elasticsearch to store massive amount of to data.Most of them find it hard to generate simple reports from Elasticsearch to get information out of it.  So this Elasticsearch plugin can be used to generate reports(Excel) with simple JSON input. This plugin can save the report to the server and also can send E-Mail to the configured recipients. We can also perform some basic operations on the fields to get a computed field in the Excel report.
 
-####List of Operation: 
+####List of Operation : 
 
 1. getValue -  Get the Elasticsearch field value
 2. getDValue - Get custom value based on the Elasticsarch field value
@@ -18,10 +18,11 @@ There are a lot of companies(small scale to large scale companies) who use Elast
 11. Array valueAt(index) - Get the value of given index from an Elasticsarch array
 
 
+####Operation Syntax and Object Type : 
 
 | # | Operation | Syntax | Object Type |
 |---|-----------|---------|------------|
-|1|getValue|[0,ES_FIELD_NAME]|[0,String]|
+|1|getValue|[0,ES_FIELD]|[0,String]|
 |2|getDValue |[1,valueMappingKey,VALUE]|[1,String,String]|
 |3|Length |[2,VALUE]|[2,String]|
 |4|Format Number Length|[3,VALUE,FORMAT_LENGTH]|[3,String,int]|
@@ -29,10 +30,16 @@ There are a lot of companies(small scale to large scale companies) who use Elast
 |6|Character at index |[5,VALUE,index]|[5,String,int]|
 |7|Calculate |[6, ARITHMETIC_EXPRESSION]|[6,String]|
 |8|Range |[7,valueMappingKey,VALUE]|[7,String,String]|
-|9|Array indexOf(int value) |[8,ES_ARRAY_FIELD_NAME, value]|[8,String,int]|
-|10|Array indexOf(String value)|[9,ES_ARRAY_FIELD_NAME,value]|[9,String,String]|
+|9|Array indexOf(int value) |[8,ES_ARRAY_FIELD, value]|[8,String,int]|
+|10|Array indexOf(String value)|[9,ES_ARRAY_FIELD,value]|[9,String,String]|
 |11|Array valueAt(index) |[10,VALUE,index]|[10,String,int]|
 
-
+#### Note :
+|Operation | Description|
+|---|-----------|
+|ES_FIELD| Field of a Elasticsearch document|
+|ES_ARRAY_FIELD| Field of a Elasticsearch document|
+|valueMappingKey| Field of a input JSON given by user |
+|ARITHMETIC_EXPRESSION| Any string representing conditional or arithmetic expression |
 
 

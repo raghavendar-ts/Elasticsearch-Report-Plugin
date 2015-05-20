@@ -48,11 +48,16 @@ There are a lot of companies(small scale to large scale companies) who use Elast
 
 Consider we have following data in Elasticsearch.
 
+__Index__: student
+
+__Type__: details
+
+__Sample Input 1__
 <pre>
 {
    "name":"Ramu",
    "gender":"Male",
-   "serial_number":"5",
+   "serial_number": "C1112"
    "marks":{
       "maths":78,
       "english":80,

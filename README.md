@@ -44,13 +44,20 @@ There are a lot of companies(small scale to large scale companies) who use Elast
 |VALUE| Can be either string given by user or any other OPERATION. i.e. we can nest the above operations to whatever level we want. In other words, we can perform multi-level OPERATION on the Elasticsearch fields |
 
 
-Detailed Example with Sample Data :
+####Detailed Example with Sample Data :
 
 Consider we have following data in Elasticsearch.
 
 <pre>
 {
-   "name":"Ramu"
+   "name":"Ramu",
+   "gender":"Male",
+   "serial_number":"5",
+   "marks":{
+      "maths":78,
+      "english":80,
+      "economics":75
+      }
 }
 </pre>
 

@@ -47,15 +47,17 @@ There are a lot of companies(small scale to large scale companies) who use Elast
 ####Detailed Example with Sample Data :
 
 #####Elasticsearch Details :
-|Operation | Description|
-
-
 
 Consider we have following data in Elasticsearch.
 
-__Index__: student
-
-__Type__: details
+<table>
+<tr>
+<td>Index</td><td>student</td>
+</tr>
+<tr>
+<td>Type</td><td>details</td>
+</tr>
+</table>
 
 __Sample Input 1__
 <pre>

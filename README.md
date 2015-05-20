@@ -46,12 +46,10 @@ There are a lot of companies(small scale to large scale companies) who use Elast
 
 ####Detailed Example with Sample Data :
 
-###Elasticsearch Details :
+#####Elasticsearch Details :
 |Operation | Description|
 
-| --- | ----------- |
 
-|Index|student|
 
 Consider we have following data in Elasticsearch.
 

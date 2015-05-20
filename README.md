@@ -59,6 +59,22 @@ Consider we have following data in Elasticsearch.
 </tr>
 </table>
 
+__valueMappingKey__
+<pre>
+{
+   "valueMappingKey":{
+      "genderMappingKey":{
+         "Male":"M",
+         "Female":"F"
+      },
+      "isPassMappingKey":{
+         "x>=40":"PASS",
+         "x<40":"FAIL"
+      }
+   }
+}
+</pre>
+
 __Sample Input 1__
 <pre>
 {
@@ -79,17 +95,17 @@ __Sample Input 1__
 ####Operation and Example :
 | # | Operation | Example | Output|
 |---|-----------|---------|---------|
-|1|getValue|[0,name]<br>[0,gender]<br>[0,marks.maths]||
-|2|getDValue |[1,genderMappingKey,Male]||
-|3|Length |[2,Ramu]||
-|4|Format Number Length|[3,632,5]||
-|5|Sub String|[4,Ramu,1,3]||
-|6|Character at index |[5,Ramu,2]||
-|7|Calculate |[6, (2+3)*7]||
-|8|Range |[7,isPassMappingKey,85]||
-|9|Array indexOf(int value) |[8,marksArrayInt, 80]||
-|10|Array indexOf(String value)|[9,marksArrayString,80]||
-|11|Array valueAt(index) |[10,marksArrayInt,2]||
+|1|getValue|[0,name]<br>[0,gender]<br>[0,marks.maths]|Ramu<br>Male<br>78|
+|2|getDValue |[1,genderMappingKey,Male]|M|
+|3|Length |[2,Ramu]|4|
+|4|Format Number Length|[3,632,5]|00632|
+|5|Sub String|[4,Ramu,1,3]|amu|
+|6|Character at index |[5,Ramu,2]|m|
+|7|Calculate |[6, (2+3)*7]|35|
+|8|Range |[7,isPassMappingKey,85]|PASS|
+|9|Array indexOf(int value) |[8,marksArrayInt, 80]|1|
+|10|Array indexOf(String value)|[9,marksArrayString,80]|1|
+|11|Array valueAt(index) |[10,marksArrayInt,2]|75|
 
 
 

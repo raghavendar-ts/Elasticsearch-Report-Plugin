@@ -37,9 +37,9 @@ There are a lot of companies(small scale to large scale companies) who use Elast
 #### Syntax Description :
 |Operation | Description|
 |---|-----------|
-|ES_FIELD| Field of a Elasticsearch document|
-|ES_ARRAY_FIELD| Field of a Elasticsearch document|
-|valueMappingKey| Field of a input JSON given by user |
+|ES_FIELD| A field in a Elasticsearch document|
+|ES_ARRAY_FIELD| A field in a Elasticsearch document|
+|valueMappingKey| A field in input JSON given by user |
 |ARITHMETIC_EXPRESSION| Any string representing conditional or arithmetic expression |
 |VALUE| Can be either string given by user or any other OPERATION. i.e. we can nest the above operations to whatever level we want. In other words, we can perform multi-level OPERATION on the Elasticsearch fields |
 

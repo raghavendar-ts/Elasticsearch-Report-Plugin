@@ -19,19 +19,19 @@ There are a lot of companies(small scale to large scale companies) who use Elast
 
 
 
-| # | Operation | Syntax |
-|---|-----------|---------|
-|1|getValue|[0,ES_FIELD_NAME]|
-|2|getDValue |[1,valueMappingKey,ES_FIELD_NAME]|
-|3|Length |[2,ES_FIELD_NAME]|
-|4|Format Number Length|[3,ES_FIELD_NAME,(int) length]|
-|5|Sub String|[4,ES_FIELD_NAME,(int) from,(int) to]|
-|6|Character at index |[5,ES_FIELD_NAME,(int) index]|
-|7|Calculate |[6,(string) ARITHMETIC_EXPRESSION]|
-|8|Range |[7,valueMappingKey,(int)]|
-|9|Array indexOf(int value) |[8,ES_FIELD_NAME,(int) value]|
-|10|Array indexOf(String value)|[9,ES_FIELD_NAME,(string) value]|
-|11|Array valueAt(index) |[10,ES_FIELD_NAME,(int)index]|
+| # | Operation | Syntax | Object Type |
+|---|-----------|---------|------------|
+|1|getValue|[0,ES_FIELD_NAME]|[0,String]|
+|2|getDValue |[1,valueMappingKey,VALUE]|[1,String,String]|
+|3|Length |[2,VALUE]|[2,String]|
+|4|Format Number Length|[3,VALUE,FORMAT_LENGTH]|[3,String,int]|
+|5|Sub String|[4,VALUE,from,to]|[4,String,int,int]|
+|6|Character at index |[5,VALUE,index]|[5,String,int]|
+|7|Calculate |[6, ARITHMETIC_EXPRESSION]|[6,String]|
+|8|Range |[7,valueMappingKey,]|[7,String]|
+|9|Array indexOf(int value) |[8,ES_ARRAY_FIELD_NAME, value]|[8,String,String]|
+|10|Array indexOf(String value)|[9,ES_ARRAY_FIELD_NAME,value]|[9,String,String]|
+|11|Array valueAt(index) |[10,VALUE,index]|[10,String,int]|
 
 
 

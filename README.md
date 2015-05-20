@@ -69,25 +69,27 @@ __Sample Input 1__
       "maths":78,
       "english":80,
       "economics":75
-      }
+      },
+   "marksArrayInt":[78,80,75]
+   "marksArrayString":["78","80","75"]
 }
 </pre>
 
 
 ####Operation and Example :
-| # | Operation | Example |
-|---|-----------|---------|
-|1|getValue|[0,ES_FIELD]|
-|2|getDValue |[1,valueMappingKey,VALUE]
-|3|Length |[2,VALUE]|
-|4|Format Number Length|[3,VALUE,FORMAT_LENGTH]|
-|5|Sub String|[4,VALUE,from,to]|
-|6|Character at index |[5,VALUE,index]|
-|7|Calculate |[6, ARITHMETIC_EXPRESSION]|
-|8|Range |[7,valueMappingKey,VALUE]|
-|9|Array indexOf(int value) |[8,ES_ARRAY_FIELD, value]|
-|10|Array indexOf(String value)|[9,ES_ARRAY_FIELD,value]|
-|11|Array valueAt(index) |[10,VALUE,index]|
+| # | Operation | Example | Output|
+|---|-----------|---------|---------|
+|1|getValue|[0,name]<br>[0,gender]<br>[0,marks.maths]||
+|2|getDValue |[1,genderMappingKey,Male]||
+|3|Length |[2,Ramu]||
+|4|Format Number Length|[3,632,5]||
+|5|Sub String|[4,Ramu,1,3]||
+|6|Character at index |[5,Ramu,2]||
+|7|Calculate |[6, (2+3)*7]||
+|8|Range |[7,isPassMappingKey,85]||
+|9|Array indexOf(int value) |[8,marksArrayInt, 80]||
+|10|Array indexOf(String value)|[9,marksArrayString,80]||
+|11|Array valueAt(index) |[10,marksArrayInt,2]||
 
 
 

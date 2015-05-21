@@ -48,17 +48,6 @@ There are a lot of companies(small scale to large scale companies) who use Elast
 
 #####Elasticsearch Details :
 
-Consider we have following data in Elasticsearch.
-
-<table>
-<tr>
-<td>Index</td><td>student</td>
-</tr>
-<tr>
-<td>Type</td><td>details</td>
-</tr>
-</table>
-
 __Sample Input Data__
 <pre>
 {
@@ -111,7 +100,7 @@ __Sample Input for Plugin__
          "match_all": {
          }
       },
-      "fields":["name","gender","serial_number","marks.maths","marks.english","marks.economics","","","","","","","","","","",]
+      "fields":["name","gender","serial_number","marks.maths","marks.english","marks.economics","","","","","","","",""]
    },
 	"config": [
       {

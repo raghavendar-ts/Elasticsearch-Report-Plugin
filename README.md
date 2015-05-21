@@ -46,8 +46,6 @@ There are a lot of companies(small scale to large scale companies) who use Elast
 
 ####Detailed Example with Sample Data :
 
-#####Elasticsearch Details :
-
 __Sample Input Data__
 <pre>
 {
@@ -172,12 +170,11 @@ __Sample Input for Plugin__
 </pre>
 
 
-
 ####Operation and Example :
 | # | Operation | Example | Output|
 |---|-----------|---------|---------|
 |1|getValue|[0,name]<br>[0,gender]<br>[0,marks.maths]|Ramu<br>Male<br>78|
-|2|getDValue |[1,genderMappingKey,Male]|M|
+|2|getDerivedValue |[1,genderMappingKey,Male]|M|
 |3|Length |[2,Ramu]|4|
 |4|Format Number Length|[3,632,5]|00632|
 |5|Sub String|[4,Ramu,1,3]|amu|

@@ -59,23 +59,7 @@ Consider we have following data in Elasticsearch.
 </tr>
 </table>
 
-__valueMappingKey__
-<pre>
-{
-   "valueMappingKey":{
-      "genderMappingKey":{
-         "Male":"M",
-         "Female":"F"
-      },
-      "isPassMappingKey":{
-         "x>=40":"PASS",
-         "x<40":"FAIL"
-      }
-   }
-}
-</pre>
-
-__Sample Input 1__
+__Sample Input Data__
 <pre>
 {
    "name":"Ramu",
@@ -90,6 +74,114 @@ __Sample Input 1__
    "marksArrayString":["78","80","75"]
 }
 </pre>
+
+__Sample Input for Plugin__
+<pre>
+{
+	"reportTitle":"Student Details Report",
+	"reportName": "Student Details",
+	"reportAccess": {
+		"fileName": "Student Details Report",
+		"ftp": {
+			"filePath": "F:\\tmp\\"
+		},
+		"email": {
+			"subject": "Student Report - Detailed Report",
+			"deliverTo": [ "E-Mail-ID" ]
+		}
+	},
+	"description": "The attachment contains detailed report of students.",
+	"batchSize": 250,
+	"host":"localhost",
+	"index":"student",
+	"type":"details",
+	"routing":"",
+	"valueMappingKey":{
+	   "genderMappingKey":{
+         "Male":"M",
+         "Female":"F"
+      },
+      "isPassMappingKey":{
+         "x>=40":"PASS",
+         "x<40":"FAIL"
+      }
+	}
+	"statement": {
+      "query": {
+         "match_all": {
+         }
+      },
+      "fields":["name","gender","serial_number","marks.maths","marks.english","marks.economics","","","","","","","","","","",]
+   },
+	"config": [
+      {
+		"title": "Name",
+		"format":"[0,name]"
+	   },
+	   {
+		"title": "Gender",
+		"format":"[0,gender]"
+	   },
+	   {
+		"title": "Serial Number",
+		"format":"[0,serial_number]"
+	   },
+	   {
+		"title": "Maths",
+		"format":"[0,marks.maths]"
+	   },
+	   {
+		"title": "English",
+		"format":"[0,marks.english]"
+	   },
+	   {
+		"title": "Economics",
+		"format":"[0,marks.economics]"
+	   },
+	   {
+		"title": "",
+		"format":"[0,]"
+	   },
+	   {
+		"title": "",
+		"format":"[0,]"
+	   },
+	   {
+		"title": "",
+		"format":"[0,]"
+	   },
+	   {
+		"title": "",
+		"format":"[0,]"
+	   },
+	   {
+		"title": "",
+		"format":"[0,]"
+	   },
+	   {
+		"title": "",
+		"format":"[0,]"
+	   },
+	   {
+		"title": "",
+		"format":"[0,]"
+	   },
+	   {
+		"title": "",
+		"format":"[0,]"
+	   },
+	   {
+		"title": "",
+		"format":"[0,]"
+	   },
+	   {
+		"title": "",
+		"format":"[0,]"
+	   }
+	]
+}
+</pre>
+
 
 
 ####Operation and Example :

@@ -51,11 +51,11 @@ __Sample Input Data__
 {
    "name":"Ramu",
    "gender":"Male",
-   "serial_number": "C1112"
+   "register_number": "5723"
    "marks":{
-      "maths":78,
-      "english":80,
-      "economics":75
+      "computer_science":78,
+      "data_mining":80,
+      "dbms":75
       },
    "marksArrayInt":[78,80,75]
    "marksArrayString":["78","80","75"]
@@ -91,6 +91,15 @@ __Sample Input for Plugin__
       "isPassMappingKey":{
          "x>=40":"PASS",
          "x<40":"FAIL"
+      },
+      "courseList":{
+      	"5":"Bachelor of Technology (B.Tech)",
+      	"6":"Master of Technology (M.Tech)",
+      	"default":"NA"
+      },
+      "branchList":{
+      	"7":"Computer Science",
+      	"8":"Information Technology"
       }
 	}
 	"statement": {
@@ -98,72 +107,76 @@ __Sample Input for Plugin__
          "match_all": {
          }
       },
-      "fields":["name","gender","serial_number","marks.maths","marks.english","marks.economics","","","","","","","",""]
+      "fields":[
+      	"name",
+      	"gender",
+      	"register_number",
+      	"marks.computer_science",
+      	"marks.data_mining",
+      	"marks.dbms",
+      	"marksArrayInt",
+      	"marksArrayString"]
    },
 	"config": [
       {
 		"title": "Name",
 		"format":"[0,name]"
 	   },
+	    {
+		"title": "Name (String Length)",
+		"format":"[2,[0,name]]"
+	   },
 	   {
 		"title": "Gender",
 		"format":"[0,gender]"
 	   },
 	   {
-		"title": "Serial Number",
-		"format":"[0,serial_number]"
+		"title": "Register Number",
+		"format":"[0,register_number]"
 	   },
 	   {
-		"title": "Maths",
-		"format":"[0,marks.maths]"
+		"title": "Computer Science",
+		"format":"[0,marks.computer_science]"
 	   },
 	   {
 		"title": "English",
-		"format":"[0,marks.english]"
+		"format":"[0,marks.data_mining]"
 	   },
 	   {
 		"title": "Economics",
-		"format":"[0,marks.economics]"
+		"format":"[0,marks.dbms]"
 	   },
 	   {
-		"title": "",
-		"format":"[0,]"
+		"title": "Course Code",
+		"format":"[5,register_number,0]"
 	   },
 	   {
-		"title": "",
-		"format":"[0,]"
+		"title": "Course",
+		"format":"[1,courseList,[5,register_number,0]]"
 	   },
 	   {
-		"title": "",
-		"format":"[0,]"
+		"title": "Branch Code",
+		"format":"[5,register_number,1]"
 	   },
 	   {
-		"title": "",
-		"format":"[0,]"
+		"title": "Branch",
+		"format":"[1,courseList,[5,register_number,1]]"
 	   },
 	   {
-		"title": "",
-		"format":"[0,]"
+		"title": "Roll No",
+		"format":"[4,register_number,2,3]"
 	   },
 	   {
-		"title": "",
-		"format":"[0,]"
+		"title": "Total Marks",
+		"format":"[6,[0,marks.computer_science]+[0,marks.data_mining]+[0,marks.dbms]]"
 	   },
 	   {
-		"title": "",
-		"format":"[0,]"
+		"title": "Average",
+		"format":"[6,[0,marks.computer_science]+[0,marks.data_mining]+[0,marks.dbms]/3]"
 	   },
 	   {
-		"title": "",
-		"format":"[0,]"
-	   },
-	   {
-		"title": "",
-		"format":"[0,]"
-	   },
-	   {
-		"title": "",
-		"format":"[0,]"
+		"title": "Pass/Fail",
+		"format":"[7,isPassMappingKey,[6,[0,marks.computer_science]+[0,marks.data_mining]+[0,marks.dbms]/3]]"
 	   }
 	]
 }
@@ -173,8 +186,8 @@ __Sample Input for Plugin__
 ####Operation and Example :
 | # | Operation | Example | Output|
 |---|-----------|---------|---------|
-|1|getValue|[0,name]<br>[0,gender]<br>[0,marks.maths]|Ramu<br>Male<br>78|
-|2|getDerivedValue |[1,genderMappingKey,Male]|M|
+|1|getValue|[0,name]<br>[0,gender]<br>[0,register_number]<br>[0,marks.computer_science]<br>[0,marks.data_mining]<br>[0,marks.dbms]<br>[0,marks.computer_science]<br>[0,marks.computer_science]<br>[0,marks.computer_science]<br>[0,marks.computer_science]|Ramu<br>Male<br>78|
+|2|getDerivedValue |[1,genderMappingKey,Male]<br>[1,courseList,[5,register_number,0]]<br>[1,branchList,[5,register_number,1]]|M<br>Bachelor of Technology (B.Tech)<br>Computer Science|
 |3|Length |[2,Ramu]|4|
 |4|Format Number Length|[3,632,5]|00632|
 |5|Sub String|[4,Ramu,1,3]|amu|

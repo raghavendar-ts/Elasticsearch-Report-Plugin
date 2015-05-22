@@ -184,19 +184,19 @@ __Sample Input for Plugin__
 
 
 ####Operation and Example :
-| # | Operation | Example | Output|
+| # | Operation | Column | Example | Output|
 |---|-----------|---------|---------|
-|1|getValue|[0,name]<br>[0,gender]<br>[0,register_number]<br>[0,marks.computer_science]<br>[0,marks.data_mining]<br>[0,marks.dbms]|Ramu<br>Male<br>5723<br>78<br>80<br>75|
-|2|getDerivedValue |[1,genderMappingKey,Male]<br>[1,courseList,[5,register_number,0]]<br>[1,branchList,[5,register_number,1]]|M<br>Bachelor of Technology (B.Tech)<br>Computer Science|
-|3|Length |[2,Ramu]|4|
-|4|Format Number Length|[3,632,5]|00632|
-|5|Sub String|[4,[0,register_number],2,3]|23|
-|6|Character at index |[5,register_number,0]<br>[5,register_number,1]|5<br>7|
-|7|Calculate |[6,[0,marks.computer_science]+[0,marks.data_mining]+[0,marks.dbms]]<br>[6,[0,marks.computer_science]+[0,marks.data_mining]+[0,marks.dbms]/3]|233<br>77.66|
-|8|Range |[7,isPassMappingKey,85]<br>[7,isPassMappingKey,35]|FAIL|
-|9|Array indexOf(int value) |[8,marksArrayInt, 80]<br>[8,marksArrayInt, 78]|1<br>0|
-|10|Array indexOf(String value)|[9,marksArrayString,80]<br>[9,marksArrayString,75]|1<br>2|
-|11|Array valueAt(index) |[10,marksArrayInt,2]<br>[10,marksArrayInt,0]|75<br>78|
+|1|getValue|Name<br>Gender<br>Register Number <br>Mark in Computer Science<br>Mark in Data Mining<br>Mark in DBMS|[0,name]<br>[0,gender]<br>[0,register_number]<br>[0,marks.computer_science]<br>[0,marks.data_mining]<br>[0,marks.dbms]|Ramu<br>Male<br>5723<br>78<br>80<br>75|
+|2|getDerivedValue |Gender (Short Form)<br>Course<br>Branch|[1,genderMappingKey,Male]<br>[1,courseList,[5,register_number,0]]<br>[1,branchList,[5,register_number,1]]|M<br>Bachelor of Technology (B.Tech)<br>Computer Science|
+|3|Length |Name|[2,Ramu]|4|
+|4|Format Number Length|-|[3,632,5]|00632|
+|5|Sub String|Roll No|[4,[0,register_number],2,3]|23|
+|6|Character at index |Course Code<br>Branch Code|[5,register_number,0]<br>[5,register_number,1]|5<br>7|
+|7|Calculate |Total<br>Average|[6,[0,marks.computer_science]+[0,marks.data_mining]+[0,marks.dbms]]<br>[6,[0,marks.computer_science]+[0,marks.data_mining]+[0,marks.dbms]/3]|233<br>77.66|
+|8|Range |Pass/Fail|[7,isPassMappingKey,85]<br>[7,isPassMappingKey,35]|FAIL|
+|9|Array indexOf(int value) |Index of Value 80<br>Index of value 78|[8,marksArrayInt, 80]<br>[8,marksArrayInt, 78]|1<br>0|
+|10|Array indexOf(String value)|Index of value 80<br>Index of value 75|[9,marksArrayString,80]<br>[9,marksArrayString,75]|1<br>2|
+|11|Array valueAt(index) |Value at index 2<br>Value at index 0 |[10,marksArrayInt,2]<br>[10,marksArrayInt,0]|75<br>78|
 
 
 

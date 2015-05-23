@@ -181,3 +181,5 @@ __Sample Input for Plugin :__
 	]
 }
 </pre>
+
+####Operation and Example :

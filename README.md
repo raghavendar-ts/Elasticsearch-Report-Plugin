@@ -181,9 +181,9 @@ __Sample Input for Plugin :__
 	]
 }
 </pre>
-hello
 
 ####Operation and Example :
+hello1
 <table>
 	<tr>
 		<th>#</th><th>Operation</th><th>Column</th><th>Example</th><th>Output</th>
@@ -394,5 +394,5 @@ hello
 			</ol>
 		</td>
 	</tr>
-<table>
+</table>
 

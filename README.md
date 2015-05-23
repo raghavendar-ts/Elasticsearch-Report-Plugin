@@ -423,5 +423,5 @@ POST /_river/report/now
 
 ####Sample Output :
 
-__Download Excel :__[Link](https://github.com/raghavendar-ts/Elasticsearch-Report-Plugin/blob/master/output/Student%20Details%20Report_20150523_1823.xls?raw=true)__
+__Download Excel :__[Link]__(https://github.com/raghavendar-ts/Elasticsearch-Report-Plugin/blob/master/output/Student%20Details%20Report_20150523_1823.xls?raw=true)
 

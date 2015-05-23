@@ -185,15 +185,6 @@ __Sample Input for Plugin__
 
 ####Operation and Example :
 
-
-<ol>
-	<li><li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>	
-</ol>
 <table>
 	<tr>
 		<td>#</td><td>Operation</td><td>Column</td><td>Example</td><td>Output</td>

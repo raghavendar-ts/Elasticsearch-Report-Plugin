@@ -51,11 +51,8 @@ public class ESReport {
 	// INPUT PARAMETERS
 	String index;
 	String type;
-	String host = "localhost";
-	String clusterName;
 	String config;
 	String statement;
-	String description;
 	String reportTitle;
 	String routing = "";
 	String nullValue = "NULL";
@@ -95,7 +92,7 @@ public class ESReport {
 		font.setBoldweight(HSSFFont.BOLDWEIGHT_BOLD);
 		font.setColor(HSSFColor.WHITE.index);
 		header_style.setFont(font);
-		header_style.setFillForegroundColor(HSSFColor.ROYAL_BLUE.index);
+		header_style.setFillForegroundColor(HSSFColor.LIGHT_BLUE.index);
 		header_style.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);
 	}
 
@@ -105,7 +102,7 @@ public class ESReport {
 		font.setColor(HSSFColor.WHITE.index);
 		font.setFontHeightInPoints((short) 14);
 		title_style.setFont(font);
-		title_style.setFillForegroundColor(HSSFColor.ROYAL_BLUE.index);
+		title_style.setFillForegroundColor(HSSFColor.LIGHT_BLUE.index);
 		title_style.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);
 	}
 
@@ -138,7 +135,6 @@ public class ESReport {
 			} else {
 				response = esclient.prepareSearch(index).setTypes(type).setRouting(routing).setSource(queryObj.toString()).execute().actionGet();
 			}
-
 			SearchHits hits = response.getHits();
 			hitscount = hits.totalHits();
 			buildDataLayout(hits);
@@ -159,19 +155,14 @@ public class ESReport {
 		System.out.println(input);
 		index = input.getString("index");
 		type = input.getString("type");
-		host = "localhost";
-		clusterName = input.getString("clusterName");
 		config = input.get("config").toString();
 		statement = input.get("statement").toString();
-		description = input.getString("description");
 		reportTitle = input.getString("reportTitle");
 
 		if (input.has("valueMapping")) {
 			valueMapping = input.getJSONObject("valueMapping");
 		}
-		if (input.has("host")) {
-			host = input.getString("host");
-		}
+
 		if (input.has("routing")) {
 			routing = input.getString("routing");
 		}
@@ -188,12 +179,14 @@ public class ESReport {
 		// queryObj.put("fields", buildQueryFields(configObj));
 		queryObj.put("size", batchsize);
 		reportAccessType = input.getJSONObject("reportAccess");
-		reportAccessType.put("description", description);
 
-		settings = ImmutableSettings.settingsBuilder().put("client.transport.sniff", true).put("cluster.name", clusterName).build();
-		if (esclient == null) {
-			esclient = new TransportClient(settings).addTransportAddress(new InetSocketTransportAddress(host, 9300));
-		}
+		/*
+		 * settings =
+		 * ImmutableSettings.settingsBuilder().put("client.transport.sniff",
+		 * true).put("cluster.name", clusterName).build(); if (esclient == null)
+		 * { esclient = new TransportClient(settings).addTransportAddress(new
+		 * InetSocketTransportAddress(host, 9300)); }
+		 */
 
 		k = 0;
 		hitscount = 0;
@@ -233,6 +226,7 @@ public class ESReport {
 	}
 
 	private void buildDataLayout(SearchHits hits) {
+		System.out.println("buildDataLayout");
 		// For each row
 		for (int i = 0; i < hits.getHits().length; i++) {
 			// Row n
@@ -240,14 +234,13 @@ public class ESReport {
 			row = sheet.createRow(rownumber);
 			for (int j = 0; j < configObj.length(); j++) {
 				cell = row.createCell((short) j);
-
 				JSONObject headerJSON = (JSONObject) configObj.get(j);
 				// JSONArray fields = headerJSON.getJSONArray("fields");
 				String format = null;
 
 				format = headerJSON.getString("format");
-				format = getExprValue(responseFields, format);
 
+				format = getExprValue(responseFields, format);
 				cell.setCellValue(format);
 			}
 			rownumber++;
@@ -266,13 +259,13 @@ public class ESReport {
 		}
 
 		for (int i = 0; i < exprIndexSize; i++) {
-
 			JSONObject exprIndex = getExprIndex(exprTemp);
 			String elementeryExpr = exprTemp.substring(exprIndex.getInt("startIndex") + 1, exprIndex.getInt("endIndex"));
+
 			String[] elementeryExprArray = elementeryExpr.split(",");
 
 			// 0 getValue
-			// 1 getDValue
+			// 1 getDerivedValue
 			// 2 Length
 			// 3 Format Number Length
 			// 4 Sub String
@@ -290,7 +283,7 @@ public class ESReport {
 			}
 
 			if (elementeryExprArray[0].equals("1")) {
-				String t = getDependencyValue(responseFields, elementeryExprArray[1], elementeryExprArray[2]);
+				String t = getDerivedValue(responseFields, elementeryExprArray[1], elementeryExprArray[2]);
 				t = getExprValue(responseFields, t);
 				exprTemp = exprTemp.replaceFirst(Pattern.quote(exprTemp.substring(exprIndex.getInt("startIndex"), exprIndex.getInt("endIndex") + 1)), t);
 			}
@@ -356,12 +349,14 @@ public class ESReport {
 	}
 
 	// ProcessType: 1
-	private String getDependencyValue(Map<String, SearchHitField> responseFields, String valueMappingKey, String value) {
+	private String getDerivedValue(Map<String, SearchHitField> responseFields, String valueMappingKey, String value) {
 		JSONObject tempMapping = valueMapping.getJSONObject(valueMappingKey);
 		if (tempMapping.has(value)) {
 			return tempMapping.getString(value);
+		} else if (tempMapping.has("default")) {
+			return tempMapping.getString("default");
 		} else {
-			return "-";
+			return nullValue;
 		}
 	}
 
@@ -370,7 +365,7 @@ public class ESReport {
 		if (!fieldValue.equals(nullValue)) {
 			return String.valueOf(fieldValue.length());
 		} else {
-			return "-";
+			return nullValue;
 		}
 	}
 
@@ -381,7 +376,7 @@ public class ESReport {
 		if (StringUtils.isNumeric(fieldValue)) {
 			return mFormat.format(Integer.valueOf(fieldValue));
 		} else {
-			return "-";
+			return nullValue;
 		}
 	}
 
@@ -417,7 +412,6 @@ public class ESReport {
 
 	// ProcessType: 7
 	private String getRange(String valueMappingKey, String fieldValue) {
-		System.out.println(valueMappingKey + ":" + fieldValue);
 		JSONObject tempMapping = valueMapping.getJSONObject(valueMappingKey);
 
 		if (!fieldValue.equals(nullValue) && !fieldValue.equals("")) {
@@ -501,14 +495,12 @@ public class ESReport {
 		if (reportAccess.has("ftp")) {
 			System.out.println("Saving file for FTP access");
 			reportAccessType = reportAccess.getJSONObject("ftp");
-			reportAccessType.put("description", reportAccess.getString("description"));
 			reportAccessTypeFile(wb, reportAccessType, fileName);
 		}
 
 		if (reportAccess.has("email")) {
 			System.out.println("Sending E-Mail...");
 			reportAccessType = reportAccess.getJSONObject("email");
-			reportAccessType.put("description", reportAccess.getString("description"));
 			reportAccessTypeEMail(wb, reportAccessType, fileName);
 		}
 	}
@@ -517,9 +509,13 @@ public class ESReport {
 		JSONArray eMailList = reportAccessTypeEMail.getJSONArray("deliverTo");
 		MailAPI mailAPI = new MailAPI();
 		// mailAPI.setFrom(fromEMail);
-		mailAPI.setSubject(reportAccessTypeEMail.getString("subject"));
+		if (reportAccessTypeEMail.has("subject")) {
+			mailAPI.setSubject(reportAccessTypeEMail.getString("subject"));
+		}
+		if (reportAccessTypeEMail.has("description")) {
+			mailAPI.setText(reportAccessTypeEMail.getString("description"));
+		}
 		mailAPI.addRecipients(eMailList);
-		mailAPI.setText(description);
 		mailAPI.attachWB(localwb, fileName);
 		mailAPI.send();
 		System.out.println("E-Mail Sent");

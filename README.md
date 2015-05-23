@@ -15,6 +15,16 @@ __Command to Remove :__
 plugin --remove esreport
 </pre>
 
+__Configure E-Mail Properties :__
+<ol>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ol>
 ####List of Operation : 
 
 1. getValue -  Get the Elasticsearch field value

@@ -2,7 +2,7 @@
 ##Elasticsearch Report Plugin to Generate Excel Report
 
 There are a lot of companies(small scale to large scale companies) who use Elasticsearch to store massive amount of to data.Most of them find it hard to generate simple reports from Elasticsearch to get information out of it.  So this Elasticsearch plugin can be used to generate reports(Excel) with simple JSON input. This plugin can save the report to the server and also can send E-Mail to the configured recipients. We can also perform some basic operations on the fields to get a computed field in the Excel report.
-
+___
 ####Installing and Removing the Plugin : 
 Go to ES_HOME/bin
 
@@ -28,6 +28,9 @@ __Configure E-Mail Properties :__
 		</ol>
 	</li>
 </ol>
+
+___
+
 ####List of Operation : 
 
 1. getValue -  Get the Elasticsearch field value
@@ -68,6 +71,7 @@ __Configure E-Mail Properties :__
 |ARITHMETIC_EXPRESSION| Any string representing conditional or arithmetic expression |
 |VALUE| Can be either string given by user or any other OPERATION. i.e. we can nest the above operations. In other words, we can perform multi-level nested OPERATION on the Elasticsearch fields |
 
+___
 
 ####Detailed Example with Sample Data :
 
@@ -206,7 +210,6 @@ POST /_river/report/now
 </pre>
 
 ####Operation and Example :
-
 
 <table>
 	<tr>
@@ -420,6 +423,7 @@ POST /_river/report/now
 	</tr>
 </table>
 
+___
 
 ####Sample Output :
 

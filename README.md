@@ -17,13 +17,16 @@ plugin --remove esreport
 
 __Configure E-Mail Properties :__
 <ol>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
+	<li>Once you have installed the plugin, go to ES_HOME/plugins/esreport/properties</li>
+	<li>Open the file named mail.properties</li>
+	<li>Give a valid username and password with the mail server properties (The existing properties can be used for G-Mail account)</li>
+	<li>Note :
+		<ol>
+			<li>Google(G-Mail) by default will not allow any third party applications to use the account programmatically. So go to https://www.google.com/settings/security/lesssecureapps and turn on the option for <b>Access for less secure apps<b></li>
+			<li></li>
+			<li></li>
+		</ol>
+	</li>
 </ol>
 ####List of Operation : 
 

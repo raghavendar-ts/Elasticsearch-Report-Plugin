@@ -248,7 +248,7 @@ __Sample Input for Plugin :__
 		</td>
 	</tr>
 	<tr>
-		<td>3</td>c
+		<td>3</td>
 		<td>Length</td>
 		<td>Name </td>
 		<td>[2,Ramu]</td>

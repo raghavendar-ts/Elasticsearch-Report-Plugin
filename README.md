@@ -431,4 +431,4 @@ ___
 
 #####Sample Student Report (Excel)
 
-[![Sample Student Report (Excel)](https://github.com/raghavendar-ts/Elasticsearch-Report-Plugin/blob/master/output/Student%20Details%20Report_20150523_1823.PNG "Sample Student Report (Excel)")](https://raw.githubusercontent.com/raghavendar-ts/Elasticsearch-Report-Plugin/master/output/Student%20Details%20Report_20150523_1823.PNG){:target="_blank"}
+[![Sample Student Report (Excel)](https://github.com/raghavendar-ts/Elasticsearch-Report-Plugin/blob/master/output/Student%20Details%20Report_20150523_1823.PNG "Sample Student Report (Excel)")](https://raw.githubusercontent.com/raghavendar-ts/Elasticsearch-Report-Plugin/master/output/Student%20Details%20Report_20150523_1823.PNG)

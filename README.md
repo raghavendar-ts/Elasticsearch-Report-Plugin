@@ -203,7 +203,7 @@ POST /_river/report/now
 		"format": "[6,([0,marks.computer_science]+[0,marks.data_mining]+[0,marks.dbms])/3]"
 	},
 	{
-		"title": "Pass/Fail",
+		"title": "PASS/FAIL",
 		"format": "[7,isPassMappingKey,[6,[0,marks.computer_science]+[0,marks.data_mining]+[0,marks.dbms]/3]]"
 	}]
 }

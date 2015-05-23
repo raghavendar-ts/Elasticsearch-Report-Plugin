@@ -5,13 +5,15 @@ There are a lot of companies(small scale to large scale companies) who use Elast
 
 ####Installing and Removing the Plugin : 
 Go to ES_HOME/bin
+
 __Command to Install :__
-
+<pre>
  plugin --install esreport --url https://github.com/raghavendar-ts/Elasticsearch-Report-Plugin/blob/master/target/releases/es-report-plugin-1.0-SNAPSHOT.zip?raw=true
-
+</pre>
 __Command to Remove :__
-
+<pre>
 plugin --remove esreport
+</pre>
 
 ####List of Operation : 
 

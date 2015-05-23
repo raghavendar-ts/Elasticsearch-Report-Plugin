@@ -248,7 +248,7 @@ __Sample Input for Plugin__
 		</td>
 	</tr>
 	<tr>
-		<td>3</td>
+		<td>3</td>c
 		<td>Length</td>
 		<td>Name </td>
 		<td>[2,Ramu]</td>
@@ -271,7 +271,12 @@ __Sample Input for Plugin__
 	<tr>
 		<td>6</td>
 		<td>Character at index</td>
-		<td>Course Code<br>Branch Code</td>
+		<td>
+		<ol>
+			<li>Course Code</li>
+			<li>Branch Code</li>
+		</ol>	
+		</td>
 		<td>
 			<ol>
 				<li>[5,register_number,0]</li>

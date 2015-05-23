@@ -194,8 +194,8 @@ __Sample Input for Plugin__
 		<td>getValue</td>
 		<td>
 			<ol>
-				<li>Name<li>
-				<li>Gender<li>
+				<li>Name</li>
+				<li>Gender</li>
 				<li>Register Number</li>
 				<li>Mark in Computer Science</li>
 				<li>Mark in Data Mining</li>
@@ -204,7 +204,7 @@ __Sample Input for Plugin__
 		</td>
 		<td>
 			<ol>
-				<li>[0,name]<li>
+				<li>[0,name]</li>
 				<li>[0,gender]</li>
 				<li>[0,register_number]</li>
 				<li>[0,marks.computer_science]</li>
@@ -214,7 +214,7 @@ __Sample Input for Plugin__
 		</td>		
 		<td>
 			<ol>
-				<li>Ramu<li>
+				<li>Ramu</li>
 				<li>Male</li>
 				<li>5723</li>
 				<li>78</li>
@@ -228,20 +228,20 @@ __Sample Input for Plugin__
 		<td>getDerivedValue</td>
 		<td>
 			<ol>
-				<li>Gender (Short Form)<li>
+				<li>Gender (Short Form)</li>
 				<li>Course</li>
 				<li>Branch</li>
 		</td>
 		<td>
 			<ol>
-				<li>[1,genderMappingKey,Male]<li>
+				<li>[1,genderMappingKey,Male]</li>
 				<li>[1,courseList,[5,register_number,0]]</li>
 				<li>[1,branchList,[5,register_number,1]]</li>	
 			</ol>
 		</td>
 		<td>
 			<ol>
-				<li>M<li>
+				<li>M</li>
 				<li>Bachelor of Technology (B.Tech)</li>
 				<li>Computer Science</li>
 			</ol>

@@ -65,121 +65,117 @@ __Sample Input Data :__
 __Sample Input for Plugin :__ 
 <pre>
 {
-  "reportTitle": "Student Details Report",
-  "reportName": "Student Details",
-  "reportAccess": {
-    "fileName": "Student Details Report",
-    "ftp": {
-      "filePath": "F:\\properties\\"
-    },
-    "email": {
-      "subject": "Student Report - Detailed Report",
-      "description": "The attachment contains detailed report of students and their marks.",
-      "deliverTo": [
-        "E-Mail ID 1",
-        "E-Mail ID 2"
-      ]
-    }
-  },
-  "batchSize": 250,
-  "index": "student",
-  "type": "details",
-  "valueMapping": {
-    "genderMappingKey": {
-      "Male": "M",
-      "Female": "F"
-    },
-    "isPassMappingKey": {
-      "x>=40": "PASS",
-      "x<40": "FAIL"
-    },
-    "courseList": {
-      "5": "Bachelor of Technology (B.Tech)",
-      "6": "Master of Technology (M.Tech)",
-      "default": "NA"
-    },
-    "branchList": {
-      "7": "Computer Science",
-      "8": "Information Technology"
-    }
-  },
-  "statement": {
-    "query": {
-      "match_all": {}
-    },
-    "fields": [
-      "name",
-      "gender",
-      "register_number",
-      "marks.computer_science",
-      "marks.data_mining",
-      "marks.dbms",
-      "marksArrayInt",
-      "marksArrayString"
-    ]
-  },
-  "config": [
-    {
-      "title": "Name",
-      "format": "[0,name]"
-    },
-    {
-      "title": "Name (String Length)",
-      "format": "[2,[0,name]]"
-    },
-    {
-      "title": "Gender",
-      "format": "[0,gender]"
-    },
-    {
-      "title": "Register Number",
-      "format": "[0,register_number]"
-    },
-    {
-      "title": "Computer Science",
-      "format": "[0,marks.computer_science]"
-    },
-    {
-      "title": "English",
-      "format": "[0,marks.data_mining]"
-    },
-    {
-      "title": "Economics",
-      "format": "[0,marks.dbms]"
-    },
-    {
-      "title": "Course Code",
-      "format": "[5,[0,register_number],0]"
-    },
-    {
-      "title": "Course",
-      "format": "[1,courseList,[5,[0,register_number],0]]"
-    },
-    {
-      "title": "Branch Code",
-      "format": "[5,[0,register_number],1]"
-    },
-    {
-      "title": "Branch",
-      "format": "[1,branchList,[5,[0,register_number],1]]"
-    },
-    {
-      "title": "Roll No",
-      "format": "[4,[0,register_number],2,3]"
-    },
-    {
-      "title": "Total Marks",
-      "format": "[6,[0,marks.computer_science]+[0,marks.data_mining]+[0,marks.dbms]]"
-    },
-    {
-      "title": "Average",
-      "format": "[6,([0,marks.computer_science]+[0,marks.data_mining]+[0,marks.dbms])/3]"
-    },
-    {
-      "title": "Pass/Fail",
-      "format": "[7,isPassMappingKey,[6,[0,marks.computer_science]+[0,marks.data_mining]+[0,marks.dbms]/3]]"
-    }
-  ]
+	"reportTitle": "Student Details Report",
+	"reportName": "Student Details",
+	"reportAccess": {
+		"fileName": "Student Details Report",
+		"ftp": {
+			"filePath": "F:\\properties\\"
+		},
+		"email": {
+			"subject": "Student Report - Detailed Report",
+			"description": "The attachment contains detailed report of students and their marks.",
+			"deliverTo": ["E-Mail ID 1",
+			"E-Mail ID 2"]
+		}
+	},
+	"batchSize": 250,
+	"index": "student",
+	"type": "details",
+	"valueMapping": {
+		"genderMappingKey": {
+			"Male": "M",
+			"Female": "F"
+		},
+		"isPassMappingKey": {
+			"x>=40": "PASS",
+			"x<40": "FAIL"
+		},
+		"courseList": {
+			"5": "Bachelor of Technology (B.Tech)",
+			"6": "Master of Technology (M.Tech)",
+			"default": "NA"
+		},
+		"branchList": {
+			"7": "Computer Science",
+			"8": "Information Technology"
+		}
+	},
+	"statement": {
+		"query": {
+			"match_all": {
+				
+			}
+		},
+		"fields": ["name",
+		"gender",
+		"register_number",
+		"marks.computer_science",
+		"marks.data_mining",
+		"marks.dbms",
+		"marksArrayInt",
+		"marksArrayString"]
+	},
+	"config": [{
+		"title": "Name",
+		"format": "[0,name]"
+	},
+	{
+		"title": "Name (String Length)",
+		"format": "[2,[0,name]]"
+	},
+	{
+		"title": "Gender",
+		"format": "[0,gender]"
+	},
+	{
+		"title": "Register Number",
+		"format": "[0,register_number]"
+	},
+	{
+		"title": "Computer Science",
+		"format": "[0,marks.computer_science]"
+	},
+	{
+		"title": "English",
+		"format": "[0,marks.data_mining]"
+	},
+	{
+		"title": "Economics",
+		"format": "[0,marks.dbms]"
+	},
+	{
+		"title": "Course Code",
+		"format": "[5,[0,register_number],0]"
+	},
+	{
+		"title": "Course",
+		"format": "[1,courseList,[5,[0,register_number],0]]"
+	},
+	{
+		"title": "Branch Code",
+		"format": "[5,[0,register_number],1]"
+	},
+	{
+		"title": "Branch",
+		"format": "[1,branchList,[5,[0,register_number],1]]"
+	},
+	{
+		"title": "Roll No",
+		"format": "[4,[0,register_number],2,3]"
+	},
+	{
+		"title": "Total Marks",
+		"format": "[6,[0,marks.computer_science]+[0,marks.data_mining]+[0,marks.dbms]]"
+	},
+	{
+		"title": "Average",
+		"format": "[6,([0,marks.computer_science]+[0,marks.data_mining]+[0,marks.dbms])/3]"
+	},
+	{
+		"title": "Pass/Fail",
+		"format": "[7,isPassMappingKey,[6,[0,marks.computer_science]+[0,marks.data_mining]+[0,marks.dbms]/3]]"
+	}]
 }
 </pre>
 

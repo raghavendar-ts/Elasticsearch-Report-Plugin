@@ -183,7 +183,6 @@ __Sample Input for Plugin :__
 </pre>
 
 ####Operation and Example :
-hello1
 <table>
 	<tr>
 		<th>#</th><th>Operation</th><th>Column</th><th>Example</th><th>Output</th>

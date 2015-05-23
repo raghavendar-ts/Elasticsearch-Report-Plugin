@@ -41,7 +41,7 @@ There are a lot of companies(small scale to large scale companies) who use Elast
 |ES_ARRAY_FIELD| A field in a Elasticsearch document|
 |valueMappingKey| A field in input JSON given by user |
 |ARITHMETIC_EXPRESSION| Any string representing conditional or arithmetic expression |
-|VALUE| Can be either string given by user or any other OPERATION. i.e. we can nest the above operations to whatever level we want. In other words, we can perform multi-level OPERATION on the Elasticsearch fields |
+|VALUE| Can be either string given by user or any other OPERATION. i.e. we can nest the above operations. In other words, we can perform multi-level nested OPERATION on the Elasticsearch fields |
 
 
 ####Detailed Example with Sample Data :

@@ -17,13 +17,14 @@ plugin --remove esreport
 
 __Configure E-Mail Properties :__
 <ol>
-	<li>Once you have installed the plugin, go to <b>ES_HOME/plugins/esreport/properties</b></li>
-	<li>Open the file named <b>mail.properties</b></li>
-	<li>Give a valid username and password with the mail server properties (The existing properties can be used for G-Mail account)</li>
+	<li>Once you have installed the plugin, go to <b>ES_HOME/plugins/esreport/properties</b>.</li>
+	<li>Open the file named <b>mail.properties</b>.</li>
+	<li>Give a valid username and password with the mail server properties (The existing properties can be used for G-Mail account).</li>
 	<li>Note :
 		<ol>
-			<li>Google(G-Mail) by default will not allow any third party applications to access the G-Mail account programmatically. But Google provides an option to turn it on. Go to <b>Less secure apps (https://www.google.com/settings/security/lesssecureapps)</b> and <b>Turn On</b> the option for <b>Access for less secure apps</b>. Once this option is turned on, the Elasticsearch Report Plugin can access the G-Mail account using the credentials given in <b>mail.properties</b> to send the generated report as mail</li>
-			<li>Make sure to disable any anti-virus programm running in your machine since it may block the outgoing mail requests sent by third party applications. In my case Avast was blocking the outgoing mail requests.</li>
+			<li>Google (G-Mail) by default will not allow any third party applications to access the G-Mail account programmatically. But Google provides an option to turn it on. To enable the option, go to <b>Less secure apps (https://www.google.com/settings/security/lesssecureapps)</b> and <b>Turn On</b> the option for <b>Access for less secure apps</b>. Once this option is turned on, the Elasticsearch Report Plugin can access the G-Mail account using the credentials given in <b>mail.properties</b> to send the generated report as mail attachment.</li>
+			<li>Make sure to disable any anti-virus program running in your machine since it may block the outgoing mail requests sent by third party applications. In my case Avast was blocking the outgoing mail requests.</li>
+			<li>You can also make the plugin to store the reports in the server where elasticsearch is running or to any folder shared using the network.</li>
 		</ol>
 	</li>
 </ol>

@@ -51,13 +51,13 @@ __Sample Input Data :__
 {
    "name":"Ramu",
    "gender":"Male",
-   "register_number": "5723"
+   "register_number": "5723",
    "marks":{
       "computer_science":78,
       "data_mining":80,
       "dbms":75
       },
-   "marksArrayInt":[78,80,75]
+   "marksArrayInt":[78,80,75],
    "marksArrayString":["78","80","75"]
 }
 </pre>

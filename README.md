@@ -422,4 +422,6 @@ POST /_river/report/now
 
 
 ####Sample Output :
-<iframe src="https://github.com/raghavendar-ts/Elasticsearch-Report-Plugin/blob/master/output/Student%20Details%20Report_20150523_1823.xls" width="100%" height="500"></iframe>
+
+__Download Excel :__[Link](https://github.com/raghavendar-ts/Elasticsearch-Report-Plugin/blob/master/output/Student%20Details%20Report_20150523_1823.xls?raw=true)__
+

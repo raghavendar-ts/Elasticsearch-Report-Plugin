@@ -87,8 +87,9 @@ __Sample Input Data :__
 }
 </pre>
 
-__Sample Input for Plugin :__ 
+__Sample HTTP Request to the Plugin :__ 
 <pre>
+POST /_river/report/now
 {
 	"reportTitle": "Student Details Report",
 	"reportName": "Student Details",

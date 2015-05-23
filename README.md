@@ -184,19 +184,220 @@ __Sample Input for Plugin__
 
 
 ####Operation and Example :
-| # | Operation | Column | Example | Output|
-|---|-----------|---------|---------|
-| 1 | getValue|Name<br>Gender<br>Register Number <br>Mark in Computer Science<br>Mark in Data Mining<br>Mark in DBMS|[0,name]<br>[0,gender]<br>[0,register_number]<br>[0,marks.computer_science]<br>[0,marks.data_mining]<br>[0,marks.dbms] | Ramu<br>Male<br>5723<br>78<br>80<br>75 |
-| 2 | getDerivedValue | Gender (Short Form)<br>Course<br>Branch | [1,genderMappingKey,Male]<br>[1,courseList,[5,register_number,0]]<br>[1,branchList,[5,register_number,1]]|M<br>Bachelor of Technology (B.Tech)<br>Computer Science |
-| 3 | Length | Name | [2,Ramu] | 4 |
-| 4 | Format Number Length | - | [3,632,5] | 00632 |
-| 5 | Sub String|Roll No | [4,[0,register_number],2,3] | 23 |
-| 6 | Character at index | Course Code<br>Branch Code |[5,register_number,0]<br>[5,register_number,1] | 5<br>7 |
-| 7 | Calculate | Total<br>Average | [6,[0,marks.computer_science]+[0,marks.data_mining]+[0,marks.dbms]]<br>[6,[0,marks.computer_science]+[0,marks.data_mining]+[0,marks.dbms]/3] | 233<br>77.66 |
-| 8 | Range | Pass/Fail | [7,isPassMappingKey,85]<br>[7,isPassMappingKey,35]| Pass<br>FAIL |
-| 9 | Array indexOf(int value) |Index of Value 80<br>Index of value 78 | [8,marksArrayInt, 80]<br>[8,marksArrayInt, 78]|1<br>0 |
-| 10 | Array indexOf(String value)|Index of value 80<br>Index of value 75 | [9,marksArrayString,80]<br>[9,marksArrayString,75] | 1<br>2 |
-| 11 | Array valueAt(index) |Value at index 2<br>Value at index 0 |[10,marksArrayInt,2]<br>[10,marksArrayInt,0]|75<br>78|
 
 
+<ol>
+	<li><li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>	
+</ol>
+<table>
+	<tr>
+		<td>#</td><td>Operation</td><td>Column</td><td>Example</td><td>Output</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>getValue</td>
+		<td>
+			<ol>
+				<li>Name<li>
+				<li>Gender<li>
+				<li>Register Number</li>
+				<li>Mark in Computer Science</li>
+				<li>Mark in Data Mining</li>
+				<li>Mark in DBMS</li>
+			</ol>
+		</td>
+		<td>
+			<ol>
+				<li>[0,name]<li>
+				<li>[0,gender]</li>
+				<li>[0,register_number]</li>
+				<li>[0,marks.computer_science]</li>
+				<li>[0,marks.data_mining]</li>
+				<li>[0,marks.dbms]</li>	
+			</ol>
+		</td>		
+		<td>
+			<ol>
+				<li>Ramu<li>
+				<li>Male</li>
+				<li>5723</li>
+				<li>78</li>
+				<li>80</li>
+				<li>75</li>	
+			</ol>
+		</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>getDerivedValue</td>
+		<td>
+			<ol>
+				<li>Gender (Short Form)<li>
+				<li>Course</li>
+				<li>Branch</li>
+		</td>
+		<td>
+			<ol>
+				<li>[1,genderMappingKey,Male]<li>
+				<li>[1,courseList,[5,register_number,0]]</li>
+				<li>[1,branchList,[5,register_number,1]]</li>	
+			</ol>
+		</td>
+		<td>
+			<ol>
+				<li>M<li>
+				<li>Bachelor of Technology (B.Tech)</li>
+				<li>Computer Science</li>
+			</ol>
+		</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>Length</td>
+		<td>Name </td>
+		<td>[2,Ramu]</td>
+		<td>4</td>
+	</tr>
+	<tr>
+		<td>4</td>
+		<td>Format Number Length</td>
+		<td>-</td>
+		<td>[3,632,5]</td>
+		<td>00632</td>
+	</tr>
+	<tr>
+		<td>5</td>
+		<td>Sub String</td>
+		<td>Roll No</td>
+		<td>[4,[0,register_number],2,3] </td>
+		<td>23</td>
+	</tr>
+	<tr>
+		<td>6</td>
+		<td>Character at index</td>
+		<td>Course Code<br>Branch Code</td>
+		<td>
+			<ol>
+				<li>[5,register_number,0]</li>
+				<li>[5,register_number,1]</li>				
+			</ol>
+		</td>
+		<td>
+			<ol>
+				<li>5</li>
+				<li>7</li>				
+			</ol>
+		</td>
+	</tr>
+	<tr>
+		<td>7</td>
+		<td>Calculate</td>
+		<td>
+			<ol>	
+				<li>Total</li>
+				<li>Average</li>				
+			</ol>
+		</td>
+		<td> 
+			<ol>	
+				<li>[6,[0,marks.computer_science]+[0,marks.data_mining]+[0,marks.dbms]]</li>
+				<li>[6,[0,marks.computer_science]+[0,marks.data_mining]+[0,marks.dbms]/3]</li>				
+			</ol>
+		</td>
+		<td>
+			<ol>	
+				<li>233</li>
+				<li>77.66</li>				
+			</ol>
+		</td>
+	</tr>
+	<tr>
+		<td>8</td>
+		<td>Range</td>
+		<td>Pass/Fail</td>
+		<td>
+			<ol>	
+				<li>[7,isPassMappingKey,85]</li>
+				<li>[7,isPassMappingKey,35]</li>				
+			</ol>
+		</td>
+		<td>
+			<ol>	
+				<li>Pass</li>
+				<li>Fail</li>				
+			</ol>
+		</td>
+	</tr>
+	<tr>
+		<td>9</td>
+		<td>Array indexOf(int value)</td>
+		<td>
+			<ol>	
+				<li>Index of Value 80</li>
+				<li>Index of value 78</li>				
+			</ol>
+		</td>
+		<td>
+			<ol>	
+				<li>[8,marksArrayInt, 80]</li>
+				<li>[8,marksArrayInt, 78]</li>				
+			</ol>
+		</td>
+		<td>
+			<ol>	
+				<li>1</li>
+				<li>0</li>				
+			</ol>
+		</td>
+	</tr>
+	<tr>
+		<td>10</td>
+		<td>Array indexOf(String value)</td>
+		<td>
+			<ol>	
+				<li>Index of value 80</li>
+				<li>Index of value 75</li>				
+			</ol>
+		</td>
+		<td>
+			<ol>	
+				<li>[9,marksArrayString,80]</li>
+				<li>[9,marksArrayString,75]</li>				
+			</ol>
+		</td>
+		<td>
+			<ol>	
+				<li>1</li>
+				<li>2</li>				
+			</ol>
+		</td>
+	</tr>
+	<tr>
+		<td>11</td>
+		<td>Array valueAt(index)</td>
+		<td>
+			<ol>	
+				<li>Value at index 2</li>
+				<li>Value at index 0</li>				
+			</ol>
+		</td>
+		<td>
+			<ol>	
+				<li>[10,marksArrayInt,2]</li>
+				<li>[10,marksArrayInt,0]</li>				
+			</ol>
+		</td>
+		<td>
+			<ol>	
+				<li>75</li>
+				<li>78</li>				
+			</ol>
+		</td>
+	</tr>
+<table>
 

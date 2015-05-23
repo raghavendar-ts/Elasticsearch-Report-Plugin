@@ -46,7 +46,7 @@ There are a lot of companies(small scale to large scale companies) who use Elast
 
 ####Detailed Example with Sample Data :
 
-__Sample Input Data__
+__Sample Input Data :__
 <pre>
 {
    "name":"Ramu",
@@ -62,7 +62,7 @@ __Sample Input Data__
 }
 </pre>
 
-__Sample Input for Plugin__
+__Sample Input for Plugin :__ 
 <pre>
 {
 	"reportTitle":"Student Details Report",
@@ -182,9 +182,7 @@ __Sample Input for Plugin__
 }
 </pre>
 
-
 ####Operation and Example :
-
 <table>
 	<tr>
 		<td>#</td><td>Operation</td><td>Column</td><td>Example</td><td>Output</td>

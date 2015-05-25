@@ -16,6 +16,9 @@ plugin --remove esreport
 </pre>
 
 __Configure E-Mail Properties :__
+
+You need to follow the below procedure if you want the generated reports to be sent as E-Mail.
+
 <ol>
 	<li>Once you have installed the plugin, go to <b>ES_HOME/plugins/esreport/properties</b>.</li>
 	<li>Open the file named <b>mail.properties</b>.</li>

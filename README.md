@@ -113,11 +113,11 @@ POST /_river/report/now
 	"index": "student",
 	"type": "details",
 	"valueMapping": {
-		"genderMappingKey": {
+		"genderMapping": {
 			"Male": "M",
 			"Female": "F"
 		},
-		"isPassMappingKey": {
+		"isPassMapping": {
 			"x>=40": "PASS",
 			"x<40": "FAIL"
 		},
@@ -204,7 +204,7 @@ POST /_river/report/now
 	},
 	{
 		"title": "PASS/FAIL",
-		"format": "[7,isPassMappingKey,[6,[0,marks.computer_science]+[0,marks.data_mining]+[0,marks.dbms]/3]]"
+		"format": "[7,isPassMapping,[6,[0,marks.computer_science]+[0,marks.data_mining]+[0,marks.dbms]/3]]"
 	}]
 }
 </pre>
@@ -260,7 +260,7 @@ POST /_river/report/now
 		</td>
 		<td>
 			<ol>
-				<li>[1,genderMappingKey,Male]</li>
+				<li>[1,genderMapping,Male]</li>
 				<li>[1,courseList,[5,register_number,0]]</li>
 				<li>[1,branchList,[5,register_number,1]]</li>	
 			</ol>
@@ -344,8 +344,8 @@ POST /_river/report/now
 		<td>Pass/Fail</td>
 		<td>
 			<ol>	
-				<li>[7,isPassMappingKey,85]</li>
-				<li>[7,isPassMappingKey,35]</li>				
+				<li>[7,isPassMapping,85]</li>
+				<li>[7,isPassMapping,35]</li>				
 			</ol>
 		</td>
 		<td>

@@ -40,7 +40,7 @@ ___
 2. getDValue - Get custom value based on the Elasticsarch field value
 3. Length - Get the length of Elasticsarch field value
 4. Format Number Length - Format integer to given length
-5. Sub String - Get substring of Elasticsarch field value
+5. Sub String - Get substring of Elasticsearch field value
 6. Character at index - Get the character at given index of Elasticsarch field value
 7. Calculate - Perform arithmetic operation on Elasticsarch field values
 8. Range - Get custom value based on range condition of Elasticsarch field value

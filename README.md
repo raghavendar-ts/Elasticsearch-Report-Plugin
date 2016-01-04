@@ -8,7 +8,7 @@ Go to ES_HOME/bin
 
 __Command to Install :__
 <pre>
- plugin --install esreport --url https://github.com/raghavendar-ts/Elasticsearch-Report-Plugin/blob/master/target/releases/es-report-plugin-1.0-SNAPSHOT.zip?raw=true
+ plugin --install esreport --url https://github.com/raghavendar-ts/Elasticsearch-Report-Plugin/releases/download/v1/es-report-plugin.zip
 </pre>
 __Command to Remove :__
 <pre>
